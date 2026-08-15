@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>&#10022; Vivi's QA Lab.exe &#10022;</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -16,16 +17,15 @@
     <div class="menubar">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
-      <a href="#driving-empire">Driving Empire</a>
-      <a href="#brookhaven">Brookhaven</a>
+      <a href="#projects">Projects</a>
       <a href="#evidence">Evidence</a>
       <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="toolbar">
       <a href="#about"><div class="ticon"><img src="assets/icon-microscope.png" alt="microscope"></div><div class="tlabel">about</div></a>
-      <a href="#driving-empire"><div class="ticon"><img src="assets/icon-flask.png" alt="flask"></div><div class="tlabel">driving empire</div></a>
-      <a href="#brookhaven"><div class="ticon"><img src="assets/icon-testtubes.png" alt="test tubes"></div><div class="tlabel">brookhaven</div></a>
+      <a href="projects/driving-empire.html"><div class="ticon"><img src="assets/icon-flask.png" alt="flask"></div><div class="tlabel">driving empire</div></a>
+      <a href="projects/brookhaven.html"><div class="ticon"><img src="assets/icon-testtubes.png" alt="test tubes"></div><div class="tlabel">brookhaven</div></a>
       <a href="#evidence"><div class="ticon"><img src="assets/icon-pipette.png" alt="pipette"></div><div class="tlabel">evidence</div></a>
     </div>
     <div class="statusstrip">
@@ -40,12 +40,11 @@
           <div class="hero-tagline">Manual QA &bull; Exploratory Testing &bull; Bug Investigation</div>
           <div class="hero-sub">Microbiology &rarr; Software Quality Assurance</div>
           <div class="hero-btns">
-            <a href="#driving-empire">View Projects</a>
+            <a href="#projects">View Projects</a>
             <a href="#evidence">Testing Evidence</a>
             <a href="#resume">Resume</a>
           </div>
         </div>
-        <div class="legend-note">&#128295; dashed-border elements are placeholders &mdash; real links, dates and media go here as they're ready</div>
       </section>
 
       <section id="about">
@@ -69,106 +68,24 @@
         </div>
       </section>
 
-      <p class="project-intro" style="text-align:center;">Two hands-on QA projects using Roblox experiences as practice environments for exploratory and functional testing.</p>
+      <section id="projects">
+        <h2 class="section-title">&gt; projects/</h2>
+        <p class="project-intro" style="text-align:center;">Two hands-on QA projects using Roblox experiences as practice environments for exploratory and functional testing.</p>
 
-      <section id="driving-empire" class="experiment">
-        <div class="exp-titlebar">&#127918; DRIVING EMPIRE &mdash; QA CASE STUDY (MAIN PROJECT)</div>
-        <div class="exp-body">
-
-          <div class="exp-section-label">Project Overview</div>
-<div class="overview-grid">
-  <div><b>Game:</b> Driving Empire (Roblox)</div>
-  <div><b>Platform:</b> Mobile (touch controls) — confirm before publishing</div>
-  <div><b>Testing type:</b> Exploratory + Functional Testing</div>
-  <div><b>Date:</b> August 2026</div>
-  <div><b>Session length:</b> ~3.5 min capture</div>
-  <div><b>Tools used:</b> Screen recording, gameplay notes</div>
-</div>
-
-<div class="exp-section-label">Testing Scope</div>
-<ul class="scope-list">
-  <li>Vehicle spawn & selection</li>
-  <li>Race matchmaking (Solo mode)</li>
-  <li>Track loading / streaming</li>
-  <li>Driving physics & HUD (speed, gear, boost)</li>
-  <li>In-game store & monetization (VIP Game Pass)</li>
-  <li>Vehicle garage management</li>
-</ul>
-
-<div class="exp-section-label">Testing Approach</div>
-<ul class="approach-list">
-  <li>Exploratory Testing</li>
-  <li>Functional Testing</li>
-  <li>Behaviour Observation</li>
-  <li>Reproduction Attempts (in progress)</li>
-</ul>
-
-<div class="exp-section-label">Objective</div>
-<p style="margin:0 0 6px;">Assess core vehicle and racing systems through hands-on exploratory testing, focusing on race entry flow, track-load behaviour, HUD accuracy, and monetization UI timing during active gameplay.</p>
-
-<div class="exp-section-label">Session &amp; Results</div>
-<p style="margin:0 0 6px;">Exploratory session covering the core loop: vehicle spawn → mode selection → matchmaking → race → results → store → garage → hub return. During one Talladega race load-in, the speedometer displayed an impossible value (117,575 km/h) while the track surface was still streaming in, followed by the vehicle appearing airborne. This looks like a race condition between asset streaming and vehicle physics initialization — logged below as an active investigation, not a confirmed defect, since it was only captured once.</p>
-
-<div class="issue-block confirmed">
-  <h5>&#9989; CONFIRMED ISSUES</h5>
-  <p class="placeholder-text" style="margin:0;">No confirmed defects at this stage. The item below requires additional reproduction attempts before being classified as a confirmed bug.</p>
-</div>
-
-<div class="issue-block potential">
-  <h5>&#128269; POTENTIAL ISSUES / OBSERVATIONS</h5>
-  <ul>
-    <li><b>Speedometer anomaly during track load-in:</b> While the Talladega circuit banner was displaying and the track geometry had not yet fully streamed in (vehicle resting on a placeholder water plane), the speedometer read 117,575 km/h. The vehicle appeared airborne/flipped shortly after. Suspected cause: physics initializing before track collision mesh finishes loading. Needs reproduction across multiple races/tracks before being logged as confirmed.</li>
-    <li><b>VIP Game Pass popup timing:</b> The VIP upsell popup appeared while a race-start countdown was actively running behind it. Not confirmed to block input, but worth verifying the popup doesn't cause a missed race start.</li>
-  </ul>
-</div>
-
-<a class="gh-link" href="#evidence">View testing evidence →</a>
+        <div class="experiment">
+          <div class="exp-titlebar">&#127918; DRIVING EMPIRE &mdash; QA CASE STUDY (MAIN PROJECT)</div>
+          <div class="exp-body">
+            <p style="margin:0 0 10px;">Exploratory + functional testing session covering the core race loop: vehicle spawn, matchmaking, an active Talladega race, the in-game store, and hub return. Includes a documented mid-race observation with speed telemetry and vehicle behaviour worth further investigation.</p>
+            <a class="gh-link" href="projects/driving-empire.html">View full case study &rarr;</a>
           </div>
-
-          <a class="gh-link" href="#evidence">View testing evidence →</a>
         </div>
-      </section>
 
-      <section id="brookhaven" class="experiment">
-        <div class="exp-titlebar">&#127961;&#65039; BROOKHAVEN &mdash; EXPLORATORY TESTING SESSION</div>
-        <div class="exp-body">
-          <p class="placeholder-text" style="margin-top:0;">An exploratory session focused on understanding Brookhaven's core systems &mdash; not a formal bug hunt.</p>
-
-          <div class="exp-section-label">Project Overview</div>
-          <div class="overview-grid">
-            <div><b>Game:</b> Brookhaven (Roblox)</div>
-            <div><b>Platform:</b> Mobile</div>
-            <div><b>Testing type:</b> Exploratory Testing</div>
-            <div><b> 31:</b> July 2026</div>
-            <div><b>Tools used:</b> Screen recording, gameplay notes</div>
+        <div class="experiment">
+          <div class="exp-titlebar">&#127961;&#65039; BROOKHAVEN &mdash; EXPLORATORY TESTING SESSION</div>
+          <div class="exp-body">
+            <p style="margin:0 0 10px;">Exploratory session focused on understanding Brookhaven's core systems &mdash; avatar customization, vehicles, map exploration and object interactions &mdash; not a formal bug hunt.</p>
+            <a class="gh-link" href="projects/brookhaven.html">View full session &rarr;</a>
           </div>
-
-          <div class="exp-section-label">Testing Scope</div>
-          <ul class="scope-list">
-            <li>Avatar customization</li>
-            <li>Clothing system</li>
-            <li>Vehicle spawning</li>
-            <li>Map exploration</li>
-            <li>Object interactions</li>
-          </ul>
-
-          <div class="exp-section-label">Testing Approach</div>
-          <ul class="approach-list">
-            <li>Exploratory Testing</li>
-            <li>Behaviour Observation</li>
-          </ul>
-
-          <div class="exp-section-label">Session Summary</div>
-          <p style="margin:0 0 6px;" class="placeholder-text">Exploratory testing session focused on understanding Brookhaven's core gameplay systems. Tested avatar customization, vehicles, map exploration and object interactions while observing unexpected behaviours.</p>
-
-          <div class="exp-section-label">Key Observations</div>
-          <p style="margin:0 0 6px;" class="placeholder-text">Observed general gameplay behaviour, interaction systems and potential areas for further investigation. This session was focused on exploration and familiarization rather than formal defect reporting.</p>
-
-          <div class="exp-section-label">&#127909; Watch the Session</div>
-          <div class="video-embed-wrap">
-            <iframe src="https://www.youtube.com/embed/bSPK9YDw3Xk" title="Brookhaven exploratory testing session" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="video-caption">Unlisted &mdash; full exploratory testing session</div>
         </div>
       </section>
 
@@ -181,22 +98,6 @@
             <div class="evidence-grid">
               <div class="evidence-box"><div class="eicon">&#128444;&#65039;</div>add screenshot</div>
               <div class="evidence-box"><div class="eicon">&#128444;&#65039;</div>add screenshot</div>
-            </div>
-          </div>
-
-          <div class="evidence-sub">
-            <h4>&#127909; Videos</h4>
-            <p style="margin:0 0 6px;">Brookhaven exploratory session &mdash; see embed above.</p>
-            <p style="margin:0 0 6px;">Driving Empire exploratory session — video below, featuring the track load-in anomaly at ~02:56–03:04.</p>
-<div class="video-embed-wrap">
-  <iframe src="https://youtu.be/Di72Tzo-3uc" title="Driving Empire exploratory testing session" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-          <div class="evidence-sub">
-            <h4>&#128196; Documents</h4>
-            <div class="evidence-grid">
-              <div class="evidence-box"><div class="eicon">&#128196;</div>test plan (add file)</div>
-              <div class="evidence-box"><div class="eicon">&#128196;</div>bug report export (add file)</div>
             </div>
           </div>
 
@@ -222,12 +123,7 @@
         <div class="inset file-tab">
           <div class="fico">&#128193;</div>
           <div style="flex:1; min-width:180px;">
-            <div style="margin-bottom:4px;">vivi_resume.pdf &nbsp;<span class="floppy-hover" title="save your progress!">&#128190;</span></div>
-            <div class="resume-row">
-              <a class="resume-btn" href="#">Download Resume</a>
-              <a class="resume-btn" href="#">View Resume</a>
-            </div>
-            <div class="resume-note">Last Updated: <span class="placeholder-text">August 2026</span> &middot; Available upon request</div>
+            <div class="resume-note">Available upon request &mdash; reach out via email or Roblox below.</div>
           </div>
         </div>
       </section>
