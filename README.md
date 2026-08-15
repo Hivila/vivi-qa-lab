@@ -42,4 +42,3 @@ Exploratory testing session focused on observing core gameplay systems and playe
 
 🌐 **Live Portfolio:** [Vivi's QA Lab](SEU-GITHUB-PAGES-LINK)
 
-📧 **Email:** SEU-EMAIL
