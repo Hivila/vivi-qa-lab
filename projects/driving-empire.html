@@ -1,5 +1,141 @@
-<h1>Driving Empire QA Case Study</h1>
-<p>
-Exploratory testing focused on vehicles,
-driving mechanics and gameplay systems.
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>&#10022; Driving Empire &mdash; Vivi's QA Lab &#10022;</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="desktop">
+  <div class="win">
+    <div class="titlebar">
+      <div>&#10022; driving-empire.exe</div>
+      <div class="tbtns"><span>_</span><span>&#9634;</span><span>x</span></div>
+    </div>
+    <div class="menubar">
+      <a href="../index.html">&larr; Back to Vivi's QA Lab</a>
+    </div>
+
+    <div class="winbody">
+
+      <section id="driving-empire" class="experiment">
+        <div class="exp-titlebar">&#127918; DRIVING EMPIRE &mdash; QA CASE STUDY (MAIN PROJECT)</div>
+        <div class="exp-body">
+
+          <div class="exp-section-label">Project Overview</div>
+          <div class="overview-grid">
+            <div><b>Game:</b> Driving Empire (Roblox)</div>
+            <div><b>Platform:</b> Mobile (touch controls)</div>
+            <div><b>Testing type:</b> Exploratory + Functional Testing</div>
+            <div><b>Date:</b> August 2026</div>
+            <div><b>Session length:</b> ~3.5 min capture</div>
+            <div><b>Tools used:</b> Screen recording, gameplay notes</div>
+          </div>
+
+          <div class="exp-section-label">Testing Scope</div>
+          <ul class="scope-list">
+            <li>Vehicle spawn &amp; selection</li>
+            <li>Race matchmaking (Solo mode)</li>
+            <li>Track loading / streaming</li>
+            <li>Driving physics &amp; HUD (speed, gear, boost)</li>
+            <li>In-game store &amp; monetization (VIP Game Pass)</li>
+            <li>Vehicle garage management</li>
+          </ul>
+
+          <div class="exp-section-label">Testing Approach</div>
+          <ul class="approach-list">
+            <li>Exploratory Testing</li>
+            <li>Functional Testing</li>
+            <li>Behaviour Observation</li>
+            <li>Reproduction Attempts (in progress)</li>
+          </ul>
+
+          <div class="exp-section-label">Test Session / Environment</div>
+          <p style="margin:0 0 6px;">Session recorded on a mobile device using touch controls, on a live multiplayer server.</p>
+
+          <div class="exp-section-label">Objective</div>
+          <p style="margin:0 0 6px;">Assess core vehicle and racing systems through hands-on exploratory testing, focusing on race entry flow, track-load behaviour, HUD accuracy, and monetization UI timing during active gameplay.</p>
+
+          <div class="exp-section-label">Test Results</div>
+          <p style="margin:0 0 6px;">The session covered the full core loop: vehicle spawn &rarr; mode selection &rarr; matchmaking &rarr; race &rarr; results &rarr; store &rarr; garage &rarr; hub return. Currency updates, chat activity, gear indicator behaviour, shop rendering, and race HUD (position / lap / % complete) all behaved consistently throughout. One unconfirmed observation was recorded during a Talladega race attempt &mdash; documented below as a Potential Issue, not a confirmed bug.</p>
+
+          <div class="issue-block confirmed">
+            <h5>&#9989; CONFIRMED ISSUES</h5>
+            <p class="placeholder-text" style="margin:0;">No confirmed defects at this stage. The items below require additional reproduction attempts before being classified as confirmed bugs.</p>
+          </div>
+
+          <div class="issue-block potential">
+            <h5>&#128269; POTENTIAL ISSUES / OBSERVATIONS</h5>
+
+            <div style="margin-top:8px;">
+              <p style="margin:0 0 4px;"><b>OBS-001 &mdash; Vehicle frozen mid-air with unstable speed telemetry</b></p>
+              <p style="margin:0 0 4px;"><b>Steps to Reproduce:</b></p>
+              <ol style="margin:0 0 6px; padding-left:20px;">
+                <li>Join a multiplayer race on the Talladega track.</li>
+                <li>Wait through the pre-race loading / countdown sequence.</li>
+                <li>Observe the vehicle and the speed readout in the first few seconds after the race is meant to start, without pressing any driving inputs.</li>
+              </ol>
+              <p style="margin:0 0 4px;"><b>Expected Result:</b> Vehicle spawns on the track surface and responds normally once the race begins.</p>
+              <p style="margin:0 0 4px;"><b>Actual Result:</b> Vehicle appeared frozen/glitched mid-air with no track surface visible beneath it. Speed readout fluctuated between roughly 117,575&ndash;120,146 km/h while the gear indicator stayed locked on 6th, with no player input given during the window (camera movement only, no acceleration or braking). The race did not progress; the session returned to the main lobby shortly after.</p>
+              <p style="margin:0 0 4px;"><b>Severity / Priority:</b> Not yet assigned &mdash; pending reproduction under controlled conditions.</p>
+              <p style="margin:0;"><b>Status:</b> Unconfirmed &middot; Reproducibility: 1/1 observed</p>
+            </div>
+
+            <hr style="border:none; border-top:1px dashed #b03fc9; margin:14px 0;">
+
+            <div>
+              <p style="margin:0 0 4px;"><b>OBS-002 &mdash; Possible checkpoint skip with combined boost + drift input</b></p>
+              <p style="margin:0 0 4px;"><b>Description:</b> Vehicle appeared to skip a checkpoint when boost and drift inputs were combined near a bridge section.</p>
+              <p style="margin:0;"><b>Status:</b> Not reproduced or confirmed &mdash; needs further reproduction attempts before being logged as a confirmed bug.</p>
+            </div>
+
+            <hr style="border:none; border-top:1px dashed #b03fc9; margin:14px 0;">
+
+            <div>
+              <p style="margin:0 0 4px;"><b>OBS-003 &mdash; VIP Game Pass popup timing</b></p>
+              <p style="margin:0 0 4px;"><b>Description:</b> The VIP Game Pass upsell popup appeared over vehicle selection while a pre-race countdown was actively running behind it.</p>
+              <p style="margin:0;"><b>Status:</b> Not confirmed to block input &mdash; worth verifying the popup doesn't cause a missed race start.</p>
+            </div>
+          </div>
+
+          <div class="exp-section-label">&#128248; Evidence &mdash; Screenshots</div>
+          <div class="evidence-grid">
+            <img src="../assets/images/driving-empire/vehicle-select.jpg" alt="Vehicle selection screen" style="width:100%; display:block; border:1px solid #6b4f96;">
+            <img src="../assets/images/driving-empire/talladega-anomaly.jpg" alt="Talladega speed telemetry anomaly" style="width:100%; display:block; border:1px solid #6b4f96;">
+            <img src="../assets/images/driving-empire/store.jpg" alt="In-game store" style="width:100%; display:block; border:1px solid #6b4f96;">
+            <img src="../assets/images/driving-empire/garage.jpg" alt="Vehicle garage panel" style="width:100%; display:block; border:1px solid #6b4f96;">
+          </div>
+          <p class="placeholder-text" style="margin:8px 0 0; font-size:14px;">Filenames above are suggestions &mdash; rename your screenshots to match, or edit the src paths in this file to match your actual filenames in assets/images/driving-empire/.</p>
+
+          <div class="exp-section-label">&#127909; Evidence &mdash; Video</div>
+          <p style="margin:0 0 8px;">Full session recording (external link &mdash; not embedded):</p>
+          <a class="gh-link" href="https://youtu.be/Di72Tzo-3uc" target="_blank" rel="noopener">&#9654; Watch Full Session on YouTube</a>
+
+        </div>
+      </section>
+
+      <div class="inset hero-inner" style="margin-top:16px;">
+        <div class="hero-btns">
+          <a href="../index.html">&larr; Back to QA Lab</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="statusbar">
+      <span>STATUS: &#128994; ACTIVE</span>
+      <span>ZOOM: 100%</span>
+    </div>
+  </div>
+
+  <div class="mouse-track">
+    <div class="lab-mouse" id="labmouse"><img src="../assets/mouse-frame1.png" id="mouseimg"></div>
+  </div>
+</div>
+
+<script src="../scripts/script.js"></script>
+
+</body>
+</html>
