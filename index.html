@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>&#10022; Vivi's QA Lab.exe &#10022;</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="desktop">
+  <div class="win">
+    <div class="titlebar">
+      <div>&#10022; Vivi's QA Lab.exe</div>
+      <div class="tbtns"><span>_</span><span>&#9634;</span><span>x</span></div>
+    </div>
+    <div class="menubar">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="toolbar">
+      <a href="#about"><div class="ticon"><img src="assets/icon-microscope.png" alt="microscope"></div><div class="tlabel">about</div></a>
+      <a href="projects/driving-empire.html"><div class="ticon"><img src="assets/icon-flask.png" alt="flask"></div><div class="tlabel">driving empire</div></a>
+      <a href="projects/brookhaven.html"><div class="ticon"><img src="assets/icon-testtubes.png" alt="test tubes"></div><div class="tlabel">brookhaven</div></a>
+      <a href="#evidence"><div class="ticon"><img src="assets/icon-pipette.png" alt="pipette"></div><div class="tlabel">evidence</div></a>
+    </div>
+    <div class="statusstrip">
+      <div class="scrolltext">&#10022; VIVI'S QA LAB &#10022; MICROBIOLOGY GRAD TRANSITIONING INTO GAME QA &#10022; TWO HANDS-ON TESTING PROJECTS BELOW &#10022; BEST VIEWED AT 800x600 &#10022;</div>
+    </div>
+
+    <div class="winbody">
+
+      <section id="home">
+        <div class="inset hero-inner">
+          <h1>&#9825; Vivi's QA Lab &#9825;</h1>
+          <div class="hero-tagline">Manual QA &bull; Exploratory Testing &bull; Bug Investigation</div>
+          <div class="hero-sub">Microbiology &rarr; Software Quality Assurance</div>
+          <div class="hero-btns">
+            <a href="#projects">View Projects</a>
+            <a href="#evidence">Testing Evidence</a>
+            <a href="#resume">Resume</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2 class="section-title">&gt; about_me.txt</h2>
+        <div class="inset about-flex">
+          <div class="avatar-box"><img src="assets/avatar.png" alt="Vivi pixel avatar"></div>
+          <div class="about-text">Biology graduate transitioning into Software Quality Assurance. My background in microbiology developed my attention to detail, investigation skills and documentation mindset, which I apply to exploratory testing and game QA.</div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2 class="section-title">&gt; skills.ini</h2>
+        <div class="inset skills-tags">
+          <span class="skill-tag">Exploratory Testing</span>
+          <span class="skill-tag">Manual Testing</span>
+          <span class="skill-tag">Bug Reporting</span>
+          <span class="skill-tag">Test Documentation</span>
+          <span class="skill-tag">Attention to Detail</span>
+          <span class="skill-tag">Problem Solving</span>
+          <span class="skill-tag">English Communication</span>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="section-title">&gt; projects/</h2>
+        <p class="project-intro" style="text-align:center;">Two hands-on QA projects using Roblox experiences as practice environments for exploratory and functional testing.</p>
+
+        <div class="experiment">
+          <div class="exp-titlebar">&#127918; DRIVING EMPIRE &mdash; QA CASE STUDY (MAIN PROJECT)</div>
+          <div class="exp-body">
+            <p style="margin:0 0 10px;">Exploratory + functional testing session covering the core race loop: vehicle spawn, matchmaking, an active Talladega race, the in-game store, and hub return. Includes a documented mid-race observation with speed telemetry and vehicle behaviour worth further investigation.</p>
+            <a class="gh-link" href="projects/driving-empire.html">View full case study &rarr;</a>
+          </div>
+        </div>
+
+        <div class="experiment">
+          <div class="exp-titlebar">&#127961;&#65039; BROOKHAVEN &mdash; EXPLORATORY TESTING SESSION</div>
+          <div class="exp-body">
+            <p style="margin:0 0 10px;">Exploratory session focused on understanding Brookhaven's core systems &mdash; avatar customization, vehicles, map exploration and object interactions &mdash; not a formal bug hunt.</p>
+            <a class="gh-link" href="projects/brookhaven.html">View full session &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="evidence">
+        <h2 class="section-title">&gt; testing_evidence/</h2>
+        <div class="inset">
+
+          <div class="evidence-sub">
+            <h4>&#128248; Screenshots</h4>
+            <div class="evidence-grid">
+              <div class="evidence-box"><div class="eicon">&#128444;&#65039;</div>add screenshot</div>
+              <div class="evidence-box"><div class="eicon">&#128444;&#65039;</div>add screenshot</div>
+            </div>
+          </div>
+
+          <div class="evidence-sub" style="margin-bottom:0;">
+            <h4>&#128203; Test Cases (sample)</h4>
+            <p style="margin:0 0 4px;">Driving Empire &mdash; Vehicle Purchase Flow</p>
+            <div class="table-scroll">
+              <table class="testplan-table">
+                <tr><th>Test Case</th><th>Steps</th><th>Expected Result</th><th>Priority</th></tr>
+                <tr><td>Purchase with sufficient currency</td><td>Dealership &rarr; select car &rarr; confirm</td><td>Currency deducted, car added instantly</td><td>High</td></tr>
+                <tr><td>Insufficient currency</td><td>Select car priced above balance &rarr; confirm</td><td>Blocked with clear message</td><td>High</td></tr>
+                <tr><td>Connection instability</td><td>Trigger purchase during lag spike</td><td>No duplicate charge or lost item</td><td>High</td></tr>
+                <tr><td>Cancel mid-purchase</td><td>Start &rarr; back out before confirming</td><td>No currency deducted</td><td>Medium</td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="resume">
+        <h2 class="section-title">&gt; resume.pdf</h2>
+        <div class="inset file-tab">
+          <div class="fico">&#128193;</div>
+          <div style="flex:1; min-width:180px;">
+            <div class="resume-note">Available upon request &mdash; reach out via email or Roblox below.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-title">&gt; contact.txt</h2>
+        <div class="inset">
+          <div class="contact-icons">
+            <a class="contact-item" href="https://github.com/Hivila" target="_blank" rel="noopener"><span>&#128193;</span> GitHub</a>
+            <a class="contact-item" href="hivilasantos@gmaill.com"><span>&#9993;&#65039;</span> Email</a>
+            <a class="contact-item real" href="https://www.roblox.com/share?code=942c1732c4fe4146af4039e1edab7d57&type=Profile&source=ProfileShare&stamp=1785298698552" target="_blank" rel="noopener"><span>&#127918;</span> Roblox</a>
+          </div>
+        </div>
+      </section>
+
+
+    </div>
+
+    <div class="statusbar">
+      <span id="visitcount">VISITORS: 000142</span>
+      <span>STATUS: &#128994; ACTIVE</span>
+      <span>ZOOM: 100%</span>
+    </div>
+  </div>
+
+  <div class="mouse-track">
+    <div class="lab-mouse" id="labmouse"><img src="assets/mouse-frame1.png" id="mouseimg"></div>
+  </div>
+</div>
+
+<script src="scripts/script.js"></script>
+
+</body>
+</html>
