@@ -29,8 +29,9 @@
           <div class="overview-grid">
             <div><b>Game:</b> Brookhaven (Roblox)</div>
             <div><b>Platform:</b> Mobile</div>
-            <div><b>Testing type:</b> Exploratory Testing</div>
-            <div><b>Date:</b> July 2026</div>
+            <div><b>Testing type:</b> Exploratory Testing (focus on core systems &amp; player experience)</div>
+            <div><b>Date:</b> July 31, 2026</div>
+            <div><b>Session length:</b> 34 minutes</div>
             <div><b>Tools used:</b> Screen recording, gameplay notes</div>
           </div>
 
@@ -51,17 +52,26 @@
           <div class="exp-section-label">Areas / Systems Explored</div>
           <ul class="scope-list">
             <li>Spawning and switching between cars</li>
-            <li>Spawning and switching between motorcycles</li>
+            <li>Spawning and switching between motorcycles, including handling on unconventional terrain (e.g. riding through a swimming pool)</li>
             <li>Avatar customization and clothing/outfit changes</li>
             <li>Free-roam exploration across different map areas</li>
-            <li>Entering and exploring interior locations, including a hospital and stores</li>
+            <li>Entering and exploring interior locations, including a hospital, a police station, and stores</li>
           </ul>
 
           <div class="exp-section-label">Session Summary</div>
-          <p style="margin:0 0 6px;" class="placeholder-text">Exploratory testing session focused on understanding Brookhaven's core gameplay systems. Tested avatar customization, vehicles, map exploration and object interactions while observing unexpected behaviours.</p>
+          <p style="margin:0 0 6px;">34-minute exploratory testing session covering avatar customization, vehicle systems (cars and motorcycles), map exploration, interior locations (hospital, police station, and stores), and general object interactions. The session was conducted on mobile with the goal of assessing system consistency, usability flow, and player experience under normal play conditions.</p>
 
           <div class="exp-section-label">Key Observations</div>
-          <p style="margin:0 0 6px;" class="placeholder-text">General gameplay behaviour, vehicle spawning, customization, and interaction systems were observed and appeared consistent with expected functionality throughout. No confirmed or potential issues were logged during this session &mdash; the goal was coverage and familiarization, not bug discovery.</p>
+          <div class="issue-block potential">
+            <h5>&#128269; MINOR OBSERVATIONS</h5>
+            <p style="margin:0 0 8px;">No high-severity defects were confirmed during this session. Several minor observations related to UI responsiveness and interaction feedback were noted:</p>
+            <ul style="margin:0; padding-left:20px;">
+              <li>Clothing/outfit items visually overlapped when selecting new pieces during avatar customization, rather than cleanly replacing the previous item.</li>
+              <li>Changing an outfit item required two separate actions (selecting the new piece, then manually removing the previous one) rather than an automatic swap &mdash; a minor point of friction in the customization flow.</li>
+              <li>Vehicle spawning (cars and motorcycles) felt intuitive, requiring only the expected number of taps to access and use.</li>
+            </ul>
+            <p style="margin:8px 0 0;">These are documented as minor UX/interaction observations rather than confirmed defects, and are visible in the full session recording below.</p>
+          </div>
 
           <div class="exp-section-label">&#128248; Evidence &mdash; Screenshots</div>
           <div class="evidence-grid">
